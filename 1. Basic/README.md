@@ -1,4 +1,4 @@
-## Что прочитать перед выполнением
+ ## Что прочитать перед выполнением
 
 - [Переменные](https://learn.javascript.ru/variables)
 - [Типы данных](https://learn.javascript.ru/types)
