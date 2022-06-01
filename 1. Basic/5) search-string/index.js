@@ -1,20 +1,35 @@
 let obb = {
   a: 3,
-  b: "qw",
-  c: false,
-  d: 0
+  b: undefined,
+  c: "",
+  d: false
 };
 
 function searchString(obj) {
-  let x = [];
-  let a = [];
+  let arr = [];
 
   for (let key in obj) {
-    x.push(key);
-    x.push(obj[key]);
-    console.log(x);
-  }
+    if (obj[key] == null || undefined) {
 
- // return `?${x[0]}=${x[1]}&${x[2]}=${x[3]}&${x[4]}=${x[5]}&${x[6]}=${x[7]}`;
+    }  else if (obj[key] === "") {
+
+    } else {
+      arr.push(`${key}` + "=" + `${obj[key]}`)
+      arr.push("&")
+    }
+
+    console.log(arr);
+
+  }
+  arr.unshift("?")
+  arr.pop();
+  return arr.join("");
 
 }
+
+console.log(searchString(obb))
+window.searchString = searchString;
+
+export default searchString;
+
+
