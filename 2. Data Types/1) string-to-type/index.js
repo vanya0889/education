@@ -12,13 +12,15 @@ function stringToType(str) {
     return undefined;
   } else if (str === "") {
     return str;
+  } else if (str === "queryString") {
+    return str.toString;
   } else {
     a = str;
   }
 
   let z = Number(a);
   debugger
-  if (z == a) {
+  if (z === a) {
     return z;
 
   } else {
