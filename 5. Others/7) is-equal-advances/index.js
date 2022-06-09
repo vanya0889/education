@@ -6,6 +6,10 @@ function isEqualAdvances(obj1, obj2) {
   if (obj1 === undefined || obj2 === undefined) {
 	return false;
   }
+  if (obj1 === null && obj2 === null) {
+	return true;
+  }
+
   if (obj1 === null || obj2 === null) {
 	return false;
   }
