@@ -17,9 +17,38 @@
   stack.push(10).push(14).pop().print() // "[2, 10]"
  */
 
-class Stack {
-  // Напиши свой код здесь
+class Stack extends Array {
+  push(item) {
+	this[this.length] = (item);
+	return this
+  }
+
+  size() {
+	return this.length
+  }
+
+  pop() {
+	this.length = this.length - 1
+	return this
+  }
+
+  isEmpty() {
+	return this.length < 1
+  }
+
+
+  print() {
+	return `[${this.join(", ")}]`
+  }
 }
+
+const stack = new Stack();
+// stack.push(1);
+// stack.print();
+// stack.pop();
+// stack.print()
+stack.push(10).push(14).pop().print()
+
 
 window.Stack = Stack;
 
