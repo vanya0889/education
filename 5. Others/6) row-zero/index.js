@@ -1,4 +1,3 @@
-let arr = "1010001001";
 
 function rowZero(str) {
   let arr = str.split("1");
@@ -12,7 +11,7 @@ function rowZero(str) {
   return result;
 }
 
-console.log(rowZero(arr));
+
 window.rowZero = rowZero;
 
 export default rowZero;

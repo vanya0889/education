@@ -1,6 +1,3 @@
-let per1 = 2;
-let per2 = {fgdfgdfg: "a"};
-
 
 function asyncSum(a, b) {
   return new Promise((resolve, reject) => {
@@ -16,7 +13,6 @@ function asyncSum(a, b) {
   })
 }
 
-console.log(asyncSum(per1, per2))
 window.asyncSum = asyncSum;
 
 export default asyncSum;
