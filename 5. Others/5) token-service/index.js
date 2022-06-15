@@ -21,7 +21,7 @@ class TokenService {
   }
 
   removeToken(observer) {
-	this.observers.filter(obs => obs !== observer)
+	this.observers.filter(obs => obs !== observer);
   }
 
   getToken(observer) {
