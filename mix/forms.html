@@ -8,54 +8,77 @@
     <title>Document</title>
 </head>
 <body>
+<div id="up"></div>
 
-   
-
-    <div class="container" id="parent">
-         <input class="form1" id="field" type="text" value="Нажми меня">  
-        <br> 
-    </div> 
-    <input value="Submit" onclick={clicker()} type="button">
-        <br>
-    
-    
+<div class="container" id="parent">
+    <input class="form1" id="field" type="text" value="Пустой текст">
 
 
-    <script>
-        function clicker() {
-
-            let field = document.querySelector('#parent');
-            let f = document.createElement('input').querySelector('#field');
-            // f.value =  document.querySelector('#field');
-            field.appendChild(f);
-            
-           
-        }
+</div>
+<input class="btn" value="Submit" onclick={clicker()} type="button">
+<div id="down"></div>
 
 
+<script>
+
+  function clicker() {
+
+	if (cordI % 2) {
+	  let field = document.querySelector("#parent");
+	  let f = document.createElement("input");
+	  f.id = cordI;
+
+	  f.value = document.querySelector("#parent").value.toUpperCase();
+
+	  field.appendChild(f);
+	}
+	  // else if (value== 555) {
+	  //   let field = document.querySelector("#up");
+	  //   let f = document.createElement("input");
+	  //   f.value = document.querySelector("#field").value;
+	  //   field.appendChild(f);
+	// }
+	else {
+	  let field = document.querySelector("#parent");
+	  let f = document.createElement("input");
+	  f.id = cordI;
+	  f.value = document.querySelector('#field').value.toLowerCase();
+
+	  field.appendChild(f);
+	}
 
 
+  }
+
+  let cordI = 1;
+
+  function clickME() {
+	cordI = ++cordI;
+  }
+
+  const btn = document.querySelector(".btn");
+  btn.addEventListener("click", clickME);
 
 
+  // function prepare(text) {
+  // return text
+  //   .split(" ")
+  //   .map(word => {
+  // 	if (word.length === 0) {
+  // 	  return word;
+  // 	}
+  // 	let color = "";
+  // 	if (word.length > 3) {
+  // 	  color = "green";
+  // 	}
+  // 	if (word.match(/[!@#$&*%]/)) {
+  // 	  color = "red";
+  // 	}
+  // 	return `<ul style="color: ${color}">${word}</ul>`;
+  //   }).join(" ");
+  // }
 
-        function prepare(text) {
-            return text
-                .split(' ')
-                .map(word => {
-                if (word.length === 0) {
-                    return word;
-                }
-                let color = '';
-                if (word.length > 3) {
-                    color = 'green';
-                }
-                if (word.match(/[!@#$&*%]/)) {
-                    color = 'red';
-                }
-                return `<ul style="color: ${color}">${word}</ul>`;
-                }).join(' ');
-            }
-      
-    </script>
+</script>
 </body>
+
 </html>
