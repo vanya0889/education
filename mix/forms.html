@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,71 +11,28 @@
 
 <div class="container" id="parent">
     <input class="form1" id="field" type="text" value="Пустой текст">
-
-
 </div>
-<input class="btn" value="Submit" onclick={clicker()} type="button">
+<input class="btn" value="Submit" onclick={onSubmitClick()} type="button">
 <div id="down"></div>
 
 
 <script>
+  let isEven = false;
 
-  function clicker() {
-
-	if (cordI % 2) {
-	  let field = document.querySelector("#parent");
-	  let f = document.createElement("input");
-	  f.id = cordI;
-
-	  f.value = document.querySelector("#parent").value.toUpperCase();
-
-	  field.appendChild(f);
+  function onSubmitClick() {
+	isEven = !isEven;
+	const parent = document.querySelector("#parent");
+	const input = document.createElement("input");
+	let newValue = parent.lastElementChild.value.replace("555", "---")
+	if (isEven) {
+	  newValue = newValue.toUpperCase();
+	} else {
+	  newValue = newValue.toLowerCase();
 	}
-	  // else if (value== 555) {
-	  //   let field = document.querySelector("#up");
-	  //   let f = document.createElement("input");
-	  //   f.value = document.querySelector("#field").value;
-	  //   field.appendChild(f);
-	// }
-	else {
-	  let field = document.querySelector("#parent");
-	  let f = document.createElement("input");
-	  f.id = cordI;
-	  f.value = document.querySelector('#field').value.toLowerCase();
-
-	  field.appendChild(f);
-	}
-
-
+	input.value = newValue
+	parent.appendChild(input);
   }
 
-  let cordI = 1;
-
-  function clickME() {
-	cordI = ++cordI;
-  }
-
-  const btn = document.querySelector(".btn");
-  btn.addEventListener("click", clickME);
-
-
-  // function prepare(text) {
-  // return text
-  //   .split(" ")
-  //   .map(word => {
-  // 	if (word.length === 0) {
-  // 	  return word;
-  // 	}
-  // 	let color = "";
-  // 	if (word.length > 3) {
-  // 	  color = "green";
-  // 	}
-  // 	if (word.match(/[!@#$&*%]/)) {
-  // 	  color = "red";
-  // 	}
-  // 	return `<ul style="color: ${color}">${word}</ul>`;
-  //   }).join(" ");
-  // }
 
 </script>
 </body>
